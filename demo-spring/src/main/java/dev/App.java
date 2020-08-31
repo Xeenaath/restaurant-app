@@ -13,6 +13,8 @@ public class App {
 
     public static void main(String[] args) {
 
+        // C'est moi qui aie le contrôle
+        // Je crée les objets
         IDao dao = new DaoBlague();
 
         Scanner scanner = new Scanner(System.in);
