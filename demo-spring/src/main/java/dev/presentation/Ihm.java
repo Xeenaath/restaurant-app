@@ -1,9 +1,12 @@
 package dev.presentation;
 
 import dev.metier.IService;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import java.util.Scanner;
 
+@Controller
 public class Ihm {
 
     private IService service;
