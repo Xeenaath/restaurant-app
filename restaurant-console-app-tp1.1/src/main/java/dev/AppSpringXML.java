@@ -8,18 +8,27 @@ import java.util.Scanner;
 public class AppSpringXML {
 
     public static void main(String[] args) {
+/*
+        try {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-config-memoire.xml");
+        } catch() {
 
-        // récupération du bean Menu
-        Menu menu = context.getBean(Menu.class);
+        }
 
-        menu.afficher();
+        // try with resources
+        try (expression) { // impléments AutoCloseable
 
-        // fermeture du Scanner
-        context.getBean(Scanner.class).close();
+        }
+*/
 
-        // fermeture du contexte Spring
-        context.close();
+        try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-config-memoire.xml")) {
+            // récupération du bean Menu
+            Menu menu = context.getBean(Menu.class);
+
+            menu.afficher();
+        } // fermeture du contexte Spring => context.close()
+
+        // try => try with resources (Java 7)
+
     }
 }
